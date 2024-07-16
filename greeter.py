@@ -1,7 +1,7 @@
 import time
 import sys
 
-def greet():
+def greet(teams):
     """ creates an inital_menu"""
 
     
@@ -33,15 +33,24 @@ def greet():
         selections = input('Enter an option \u25B6'.center(70))
         if selections=='1':
              team = input('Please enter a team \u25B6'.center(70))
-             print(team)
-             return team
-             
+             if team.title() in teams:
+                 return team.title()
+                 continue
+                 
+                 
+             else:
+                 print('Please enter a valid option'.center(70))
+                
+            
         elif selections=='2':
-             print(f'Thank you for visiting {app_title}.Hope to see you again, soon')
-             sys.exit()
+            print()
+            print()
+            print(f'Thank you for visiting {app_title}.Hope to see you again, soon')
+            sys.exit()
         else:
              print('Please enter a valid option'.center(70))
-        
+
+
 
 
 
