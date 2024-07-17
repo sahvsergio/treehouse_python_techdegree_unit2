@@ -28,7 +28,7 @@ def clean_data(players):
             fixed['Fist Name'] = player['name'].split(' ')[0]
             fixed['Last Name'] = player['name'].split(' ')[1]
             fixed['Guardians'] = player['guardians'].split('and')
-            print(f'this is the guardian list{fixed['Guardians']}')
+            #print(f'this is the guardian list{fixed['Guardians']}')
             
             split_height = player['height'].split(' ')
             fixed['Height'] = int(split_height[0])
@@ -41,7 +41,7 @@ def clean_data(players):
             #appending the resulting dictionary to the initial list
             
             cleaned_players.append(fixed)
-        print(cleaned_players)
+       
         #returning the list
         return cleaned_players
     #handling the exception of the constant file not being present
