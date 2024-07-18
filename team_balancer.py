@@ -22,6 +22,7 @@ def balance_teams(teams, cleaned_players, team_length):
             # appending the player to the team
             if len(balanced_teams[team]) == 0:
                 balanced_teams[team].append(player)
+                cleaned_players.pop(0)
                 
                
 
@@ -29,7 +30,10 @@ def balance_teams(teams, cleaned_players, team_length):
                 status = balanced_teams[team][-1]['Experience']
                 if status != player['Experience']:
                     balanced_teams[team].append(player)
-               
+    cleaned_players.pop(0)
+      
+           
+             
             
         
 
@@ -40,7 +44,7 @@ def balance_teams(teams, cleaned_players, team_length):
     print()
     print()
     print(f" The warriors: {balanced_teams['Warriors']}")
-
+    print(len(balanced_teams['Panthers']))
     print(len(balanced_teams['Bandits']))
     print(len(balanced_teams['Warriors']))
-    print(len(balanced_teams['Panthers']))
+    
