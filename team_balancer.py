@@ -1,5 +1,6 @@
 from constants import TEAMS
 import copy
+import random
 
 
 
@@ -19,14 +20,43 @@ def balance_teams(teams, cleaned_players,team_length):
         balanced_teams[team]=[]
         #looping through the list of players:
         for player in cleaned_players:
-            #appending 
-            balanced_teams[team].append(player)
-            if len(balanced_teams[team])<team_length :
+            #appending the player to the team
+            if len(balanced_teams[team])==0:
+                balanced_teams[team].append(player)
+                
+                
             
-                continue
-            else:
-                break
-    print(len(balanced_teams['Panthers']))
+            elif len(balanced_teams[team])<team_length :
+                status = balanced_teams[team][-1]['Experience']
+                if status!=player['Experience']:
+                    balanced_teams[team].append(player)
+        
+                    
+                    
+               
+    
+         
+                
+                
+                    
+                    
+                    
+                
+                
+                    
+                
+            
+    print(f"the panthers, roar{balanced_teams['Panthers']}")
+    print()
+    print()
+    print(f" the bandits{balanced_teams['Bandits']}")
+    print()
+    print()
+    print(f" The warriors: {balanced_teams['Warriors']}")
+    
+    
     print(len(balanced_teams['Bandits']))
     print(len(balanced_teams['Warriors']))
+    print(len(balanced_teams['Panthers']))
+    
         
