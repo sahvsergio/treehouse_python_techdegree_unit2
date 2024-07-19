@@ -43,3 +43,4 @@ def balance_teams(teams, cleaned_players, team_length):
     print(len(balanced_teams['Bandits']))
     print(len(balanced_teams['Warriors']))
     print(len(balanced_teams['Panthers']))
+    
