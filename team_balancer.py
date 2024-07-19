@@ -8,8 +8,9 @@ def balance_teams(teams, cleaned_players, team_length):
 
     Args:
         teams (_type_): _description_
-        
+
     """
+    # creating an empty dictionary to hold balanced  player teams
     # creating an empty dictionary to hold balanced  player teams
     balanced_teams = {}
     # loop through the teams
@@ -17,25 +18,19 @@ def balance_teams(teams, cleaned_players, team_length):
         # making the teams the keys of the dictionary,
         # initializing them with a value of an empty list
         balanced_teams[team] = []
-        # looping through the list of players:
-        for player in cleaned_players:
-            # appending the player to the team
-            if len(balanced_teams[team]) == 0:
-                balanced_teams[team].append(player)
-                cleaned_players.pop(0)
-                
-               
 
-            elif len(balanced_teams[team]) < team_length:
-                status = balanced_teams[team][-1]['Experience']
-                if status != player['Experience']:
-                    balanced_teams[team].append(player)
-    cleaned_players.pop(0)
-      
-           
-             
-            
-        
+    # starting the index at 0
+    player_index = 0
+    # looping through the list of players:
+    while player_index < len(cleaned_players):
+        for team in teams:
+            if len(balanced_teams[team]) < team_length:
+                # appending the player to the team
+                balanced_teams[team].append(cleaned_players[player_index])
+                # incrementing the index
+                player_index += 1
+                if player_index >= len(cleaned_players):
+                    break
 
     print(f"the panthers, roar{balanced_teams['Panthers']}")
     print()
@@ -44,7 +39,7 @@ def balance_teams(teams, cleaned_players, team_length):
     print()
     print()
     print(f" The warriors: {balanced_teams['Warriors']}")
-    print(len(balanced_teams['Panthers']))
+
     print(len(balanced_teams['Bandits']))
     print(len(balanced_teams['Warriors']))
-    
+    print(len(balanced_teams['Panthers']))

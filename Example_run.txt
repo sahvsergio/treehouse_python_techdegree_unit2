@@ -1,0 +1,24 @@
+BASKETBALL TEAM STATS TOOL
+
+---- MENU----
+
+ Here are your choices:
+  A) Display Team Stats
+  B) Quit
+
+Enter an option:  A
+
+A) Panthers
+B) Bandits
+C) Warriors
+
+Enter an option: A
+
+Team: Panthers Stats
+--------------------
+Total players: 6
+
+Players on Team:
+  Karl Saygan, Chloe Alaska, Phillip Helm, Suzane Greenberg, Herschel Krustofski, Joe Smith
+
+Press ENTER to continue...

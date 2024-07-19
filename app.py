@@ -7,6 +7,7 @@ from greeter import greet
 import copy
 
 
+
 def main():
 
      #read data for both teams and players
@@ -18,6 +19,7 @@ def main():
      
    
      team_length = len(cleaned_players)//len(teams)
+     
      balanced_teams = balance_teams(teams,cleaned_players, team_length)
      #team=greet(teams)
     
