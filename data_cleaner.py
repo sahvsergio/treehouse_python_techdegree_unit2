@@ -25,7 +25,7 @@ def clean_data(players):
             fixed = {}
             #creating the key,value pairs for the fixed dictionary
             logging.info('')
-            fixed['Fist Name'] = player['name'].split(' ')[0]
+            fixed['First Name'] = player['name'].split(' ')[0]
             fixed['Last Name'] = player['name'].split(' ')[1]
             fixed['Guardians'] = player['guardians'].split('and')
             #print(f'this is the guardian list{fixed['Guardians']}')
