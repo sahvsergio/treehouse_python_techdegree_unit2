@@ -1,6 +1,6 @@
-from constants import TEAMS
-import copy
 import random
+import copy
+
 
 
 def balance_teams(teams, cleaned_players, team_length):
@@ -8,7 +8,7 @@ def balance_teams(teams, cleaned_players, team_length):
 
     Args:
         teams (_type_): _description_
-
+        
     """
     # creating an empty dictionary to hold balanced  player teams
     balanced_teams = {}
@@ -18,20 +18,22 @@ def balance_teams(teams, cleaned_players, team_length):
         # initializing them with a value of an empty list
         balanced_teams[team] = []
         # looping through the list of players:
-        # # appending the player to the team
-        while len(balanced_teams[team]) < team_length:
+        while cleaned_players:
+            # appending the player to the team
             for player in cleaned_players:
-                if player['First Name'] not in balanced_teams[team]:
-                   status = balanced_teams[team][-1]['Experience']
-                   if status != player['Experience']:
-                    popped=cleaned_players.pop(0)
-                    continue
+                if len(balanced_teams[team]) == 0:
+                    balanced_teams[team].append(player)
+                    break
+                cleaned_players.pop(0)
 
-            balanced_teams[team].append(popped)
-            continue
+                if len(balanced_teams[team]) < team_length:
+                    status = balanced_teams[team][-1]['Experience']
+                    if status != player['Experience']:
+                        continue
+                balanced_teams[team].append(player)
+                break
         else:
             continue
-        break
 
     print(f"the panthers, roar{balanced_teams['Panthers']}")
     print()
@@ -40,12 +42,7 @@ def balance_teams(teams, cleaned_players, team_length):
     print()
     print()
     print(f" The warriors: {balanced_teams['Warriors']}")
-    print(len(balanced_teams['Panthers']))
+
     print(len(balanced_teams['Bandits']))
     print(len(balanced_teams['Warriors']))
-
-    with open('team_balancer.txt', 'w') as my_file:
-        my_file.write(f"the panthers, roar{balanced_teams['Panthers']}")
-        my_file.write(f" The warriors: {balanced_teams['Warriors']}")
-        my_file.write(f" The warriors: {balanced_teams['Warriors']}")
-
+    print(len(balanced_teams['Panthers']))

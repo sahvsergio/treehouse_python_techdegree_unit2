@@ -2,7 +2,7 @@
 from constants import PLAYERS
 from constants import TEAMS
 from data_cleaner import clean_data
-from team_balancer import balance_teams
+from team_balancer2 import balance_teams
 from greeter import greet
 import copy
 
