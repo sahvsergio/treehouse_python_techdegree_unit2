@@ -73,7 +73,7 @@ def greet(balanced_teams,teams):
             
                 
             else:
-                print('Please enter a valid option'.center(70))
+                print('Please enter a valid  team option'.center(70))
                 
             
         elif selections=='2':
