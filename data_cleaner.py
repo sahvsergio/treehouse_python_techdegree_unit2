@@ -8,13 +8,17 @@ logging.basicConfig(filename='data_cleaner.log', level=logging.DEBUG)
 
 def clean_data(players):
     """
-    Clean Data
+    Create Person
+    This path creates a person in the app  and save  \
+    the information in the database
+    Parameters:
+    -Requests body Parameter:
+        -**person:Person**-> A person model with 1st name,\
+        lastname, age, hair color and \
+        marital status.
 
-    Args:
-        players (List): _description_
-
-    Returns:
-        List: _description_
+    Returns a person model with 1stname, \
+        last lanem , age, hair color and marital status
     """
     # creating  the empty new collection
     cleaned_players = []
@@ -44,22 +48,12 @@ def clean_data(players):
 
         #returning the list
         return cleaned_players
-    #handling the exception of the constant file not being present
+        #handling the exception of the constant file not being present
     except FileNotFoundError:
         print('There is no constant files')
-
-
-def show_stats(team):
-    """
-    Total players: 6
-    Total experienced: 3
-    Total inexperienced: 3
-    Average height: 42.5
-    """
-    #total_players=len(teams)
-    pass
 
 
 if __name__ == '__main__':
 
     print(clean_data.__doc__)
+
